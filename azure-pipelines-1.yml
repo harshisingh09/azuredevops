@@ -19,9 +19,14 @@ steps:
     jdkArchitectureOption: 'x64'
     publishJUnitResults: true
     testResultsFiles: '**/surefire-reports/TEST-*.xml'
-    goals: 'mvn install'
+    goals: 'package'
 - task: PublishPipelineArtifact@1
   inputs:
-    targetPath: '$(Pipeline.Workspace)'
+    targetPath: '$(Build.ArtifactStagingDirectory)'
     artifact: 'drop'
     publishLocation: 'pipeline'
+- task: DownloadPipelineArtifact@2
+  inputs:
+    buildType: 'current'
+    artifactName: 'drop'
+    targetPath: '$(Build.ArtifactStagingDirectory)'
