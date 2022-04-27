@@ -10,6 +10,19 @@
   <name>Maven Project</name>
   <description>Sample Maven project with a working, deployable site.</description>
   <url>http://www.example.com</url>
+         
+  <repositories>
+    <repository>
+      <id>maven</id>
+      <url>https://pkgs.dev.azure.com/harshita0996/myfirstdeployment/_packaging/maven/maven/v1</url>
+      <releases>
+        <enabled>true</enabled>
+      </releases>
+      <snapshots>
+        <enabled>true</enabled>
+      </snapshots>
+    </repository>
+  </repositories>
 
   <properties>
     <project.build.sourceEncoding>utf-8</project.build.sourceEncoding>
@@ -27,6 +40,16 @@
       <name>Test Project Site</name>
       <url>file:///tmp/maven-project-site</url>
     </site>
+    <repository>
+      <id>maven</id>
+      <url>https://pkgs.dev.azure.com/harshita0996/myfirstdeployment/_packaging/maven/maven/v1</url>
+      <releases>
+        <enabled>true</enabled>
+      </releases>
+      <snapshots>
+        <enabled>true</enabled>
+      </snapshots>
+    </repository>
   </distributionManagement>
 
   <build>
