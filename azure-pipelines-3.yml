@@ -18,7 +18,7 @@ steps:
     javaHomeOption: 'Path'
     jdkDirectory: 'C:\Program Files\Java\jdk1.8.0_121\bin'
     mavenVersionOption: 'Path'
-    mavenDirectory: 'C:\Users\lenovo\Desktop\maven\apache-maven-3.8.5\bin'
+    mavenDirectory: 'C:\Users\lenovo\Desktop\maven\apache-maven-3.8.5'
     mavenSetM2Home: true
     mavenAuthenticateFeed: true
     effectivePomSkip: true
@@ -30,7 +30,7 @@ steps:
 - task: PublishBuildArtifacts@1
   inputs:
     PathtoPublish: '$(Build.ArtifactStagingDirectory)'
-    ArtifactName: 'maven'
+    ArtifactName: 'drop'
     publishLocation: 'Container'
 
 - task: Maven@3
@@ -41,7 +41,7 @@ steps:
     javaHomeOption: 'Path'
     jdkDirectory: 'C:\Program Files\Java\jdk1.8.0_121\bin'
     mavenVersionOption: 'Path'
-    mavenDirectory: 'C:\Users\lenovo\Desktop\maven\apache-maven-3.8.5\bin'
+    mavenDirectory: 'C:\Users\lenovo\Desktop\maven\apache-maven-3.8.5'
     mavenSetM2Home: true
     mavenAuthenticateFeed: true
     effectivePomSkip: true
