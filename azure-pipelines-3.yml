@@ -6,7 +6,7 @@
 trigger:
 - master
 
-pool: Default
+pool: T835LBQS
 
 steps:
 - task: Maven@3
