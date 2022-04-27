@@ -16,7 +16,7 @@ steps:
     publishJUnitResults: true
     testResultsFiles: '**/surefire-reports/TEST-*.xml'
     javaHomeOption: 'Path'
-    jdkDirectory: 'C:\Program Files\Java\jdk1.8.0_121\bin'
+    jdkDirectory: 'C:\Program Files\Java\jdk1.8.0_121'
     mavenVersionOption: 'Path'
     mavenDirectory: 'C:\Users\lenovo\Desktop\maven\apache-maven-3.8.5'
     mavenSetM2Home: true
@@ -39,7 +39,7 @@ steps:
     goals: 'deploy'
     publishJUnitResults: false
     javaHomeOption: 'Path'
-    jdkDirectory: 'C:\Program Files\Java\jdk1.8.0_121\bin'
+    jdkDirectory: 'C:\Program Files\Java\jdk1.8.0_121'
     mavenVersionOption: 'Path'
     mavenDirectory: 'C:\Users\lenovo\Desktop\maven\apache-maven-3.8.5'
     mavenSetM2Home: true
