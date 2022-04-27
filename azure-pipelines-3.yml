@@ -6,20 +6,23 @@
 trigger:
 - master
 
-pool:
-  vmImage: ubuntu-latest
+pool: Default
 
 steps:
 - task: Maven@3
   inputs:
     mavenPomFile: 'pom.xml'
-    mavenOptions: '-Xmx3072m'
-    javaHomeOption: 'JDKVersion'
-    jdkVersionOption: '1.8'
-    jdkArchitectureOption: 'x64'
+    goals: 'package'
     publishJUnitResults: true
     testResultsFiles: '**/surefire-reports/TEST-*.xml'
-    goals: 'package'
+    javaHomeOption: 'Path'
+    jdkDirectory: 'C:\Program Files\Java\jdk1.8.0_121\bin'
+    mavenVersionOption: 'Path'
+    mavenDirectory: 'C:\Users\lenovo\Desktop\maven\apache-maven-3.8.5\bin'
+    mavenSetM2Home: true
+    mavenAuthenticateFeed: true
+    effectivePomSkip: true
+    sonarQubeRunAnalysis: false
 - task: CopyFiles@2
   inputs:
     Contents: '**/*.war'
@@ -29,13 +32,17 @@ steps:
     PathtoPublish: '$(Build.ArtifactStagingDirectory)'
     ArtifactName: 'maven'
     publishLocation: 'Container'
+
 - task: Maven@3
   inputs:
     mavenPomFile: 'pom.xml'
     goals: 'deploy'
     publishJUnitResults: false
-    javaHomeOption: 'JDKVersion'
-    mavenVersionOption: 'Default'
-    mavenAuthenticateFeed: false
-    effectivePomSkip: false
+    javaHomeOption: 'Path'
+    jdkDirectory: 'C:\Program Files\Java\jdk1.8.0_121\bin'
+    mavenVersionOption: 'Path'
+    mavenDirectory: 'C:\Users\lenovo\Desktop\maven\apache-maven-3.8.5\bin'
+    mavenSetM2Home: true
+    mavenAuthenticateFeed: true
+    effectivePomSkip: true
     sonarQubeRunAnalysis: false
